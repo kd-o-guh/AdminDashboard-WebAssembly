@@ -22,7 +22,18 @@
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
 
-    --box-shadow: 0 2rem 3rem var(--color-light)
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* ---------------- DARK THEME VARIABLES ----------------*/
+
+.dark-theme-variables{
+    --color-background: #181A1E;
+    --color-white: #202528;
+    --color-dark: #EDEFFD;
+    --color-dark-variant: #A3BDCC;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
 *{
@@ -371,6 +382,7 @@ main .recent-orders a{
     text-align: center;
     display: block;
     margin: 1rem auto;
+    cursor: pointer;
     color: var(--color-prymary);
 }
 
@@ -572,7 +584,7 @@ main .recent-orders a{
     }
     aside{
         position: fixed;
-        left: 0;
+        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -580,6 +592,13 @@ main .recent-orders a{
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu{
+        to{
+            left: 0;
+
+        }
     }
     aside .logo{
         margin-left: 1rem;
